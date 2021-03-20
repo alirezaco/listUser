@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    <%- include("../partials/header") -%>
+
+        <div class="d-flex flex-wrap my-5 mx-5 justify-content-around" id="body">
+            <%for(let i = 0; i < 6; i++){%>
+                <div class="card mx-3 my-4 col-12 col-sm-5 col-md-3">
+                    <img src="<%= users[i].avatar %>" class="card-img-top" alt="..." style="width: 100%; height: 60%;">
+                    <div class="card-body my-2">
+                        <h5 class="card-title">
+                            <%= users[i].id %>
+                        </h5>
+                        <p class="card-text">
+                            <%= users[i].email %>
+                        </p>
+                        <a href="product/<%= i + 1 %>" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+                <%}%>
+        </div>
+
+        <%- include("../partials/footer.ejs")%>
+</body>
+
+</html>
